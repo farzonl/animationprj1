@@ -23,17 +23,53 @@ void Equations::kinematicEquation(Particle &p,
 void Equations::explicitEulerEquation(Particle &p,
                                       double timeStep,
                                       double gravity) {
-    //y_i+1 = yi + f(xi,yi)*dX (explicit Euler)
-    // let dx = timeStep
+    // y_i+1 = yi + phi(xi,yi,h)*h
+    // phi = sigma[n=1,N] an*kn
+    // first order a1*k1
+    // k1 = f(xi,yi), a1 =1
+    //y_i+1 = yi + f(xi,yi)*h (explicit Euler)
+    // let h = timeStep.
     // x'(t) = v(t)
     // v't(t) = a(t)
     // x(h) = x(0) + h*v(0)
     // v(h) = v(0) + h(F/m)
     // F= ma -> a = F/m
-    double x_0 = p.mPosition[1];
+    double y_0 = p.mPosition[1];
     double v_0 = p.mVelocity[1];
-    double diplus1 = x_0 + v_0 * timeStep;
-    double vplus1 = v_0 + gravity * timeStep;
+    double diplus1 = y_0 + v_0 * timeStep;
+    double viplus1 = v_0 + gravity * timeStep;
     p.mPosition[1] = diplus1;  // update position
-    p.mVelocity[1] = vplus1; // update veloicty
+    p.mVelocity[1] = viplus1; // update veloicty
+}
+
+void Equations::midpointEquation(Particle &p,
+                                 double timeStep,
+                                 double gravity) {
+    //y_i+1 = yi + f(xi+1/2,yi+1/2)*h
+    double y_0 = p.mPosition[1];
+    double v_0 = p.mVelocity[1];
+    double viplus1half = v_0 + ((gravity * timeStep) /2.0);
+    double diplus1 = y_0 + viplus1half * timeStep;
+    double viplus1 = v_0 + gravity * timeStep;
+    
+    p.mPosition[1] = diplus1;  // update position
+    p.mVelocity[1] = viplus1; // update veloicty
+}
+
+void Equations::implicitEulerEquation(Particle &p,
+                                  double timeStep,
+                                  double gravity) {
+    
+    // x(t+h) = x(t) + h f(x(t+h))
+    // v(t+1) = v(t) + h(F/m)
+    // let f(x(t+1)) = v(t+1)
+    double y_0 = p.mPosition[1];
+    double v_0 = p.mVelocity[1];
+    // calcuate velocity at t+1 then displacment.
+    double viplus1 = v_0 + gravity * timeStep;
+    double diplus1 = y_0 + viplus1 * timeStep;
+    
+    p.mPosition[1] = diplus1;  // update position
+    p.mVelocity[1] = viplus1; // update veloicty
+
 }

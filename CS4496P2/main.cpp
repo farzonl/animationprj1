@@ -50,6 +50,11 @@ void DrawBackground();
 // main function
 int main(int argc, char *argv[])
 {
+    std::cout << "Set initial velocity for the y axis" << endl;
+    double v0 = 0;
+    std::cin >> v0;
+    cout << "The value you entered is: " << v0 << endl;
+    mySimulator.setInitialVelocity(v0);
     glutInit(&argc, argv);
     glutInitWindowSize(window_width, window_height);
     glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA|GLUT_DEPTH);

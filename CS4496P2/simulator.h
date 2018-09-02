@@ -14,7 +14,7 @@
 class Simulator {
 public:
     Simulator();
-        
+    void setInitialVelocity(double v0);
     void simulate();
     
     int getNumParticles();
@@ -25,6 +25,7 @@ public:
     
     void reset();
 private:
+    double initialVelocity;
     double mTimeStep;       // time step
     double mElapsedTime;    // time pased since beginning of simulation
     std::vector<Particle> mParticles;
