@@ -6,11 +6,92 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		16E94510213B460900A12B3B /* equations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E94505213B460900A12B3B /* equations.cpp */; };
+		16E94512213B460900A12B3B /* equations.h in Sources */ = {isa = PBXBuildFile; fileRef = 16E94507213B460900A12B3B /* equations.h */; };
+		16E94513213B460900A12B3B /* simulator.h in Sources */ = {isa = PBXBuildFile; fileRef = 16E94508213B460900A12B3B /* simulator.h */; };
+		16E94514213B460900A12B3B /* simulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E94509213B460900A12B3B /* simulator.cpp */; };
+		16E94515213B460900A12B3B /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 16E9450A213B460900A12B3B /* Makefile */; };
+		16E94516213B460900A12B3B /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E9450B213B460900A12B3B /* particle.cpp */; };
+		16E94517213B460900A12B3B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E9450C213B460900A12B3B /* main.cpp */; };
+		16E94518213B460900A12B3B /* particle.h in Sources */ = {isa = PBXBuildFile; fileRef = 16E9450D213B460900A12B3B /* particle.h */; };
+		16E94519213B460900A12B3B /* Timer.h in Sources */ = {isa = PBXBuildFile; fileRef = 16E9450E213B460900A12B3B /* Timer.h */; };
+		16E9451A213B460900A12B3B /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16E9450F213B460900A12B3B /* Timer.cpp */; };
+		16E9451B213B461300A12B3B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E944D4213B42DF00A12B3B /* GLUT.framework */; };
+		16E9451C213B461700A12B3B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E944D2213B42D900A12B3B /* OpenGL.framework */; };
+		16E94560213B476600A12B3B /* Eigen in Sources */ = {isa = PBXBuildFile; fileRef = 16E9455F213B476600A12B3B /* Eigen */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		16E944FC213B45C800A12B3B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		16E944D2213B42D900A12B3B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		16E944D4213B42DF00A12B3B /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		16E944FE213B45C800A12B3B /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xcode; sourceTree = BUILT_PRODUCTS_DIR; };
+		16E94505213B460900A12B3B /* equations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = equations.cpp; path = CS4496P2/equations.cpp; sourceTree = "<group>"; };
+		16E94507213B460900A12B3B /* equations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = equations.h; path = CS4496P2/equations.h; sourceTree = "<group>"; };
+		16E94508213B460900A12B3B /* simulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = simulator.h; path = CS4496P2/simulator.h; sourceTree = "<group>"; };
+		16E94509213B460900A12B3B /* simulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = simulator.cpp; path = CS4496P2/simulator.cpp; sourceTree = "<group>"; };
+		16E9450A213B460900A12B3B /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; name = Makefile; path = CS4496P2/Makefile; sourceTree = "<group>"; };
+		16E9450B213B460900A12B3B /* particle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = particle.cpp; path = CS4496P2/particle.cpp; sourceTree = "<group>"; };
+		16E9450C213B460900A12B3B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = CS4496P2/main.cpp; sourceTree = "<group>"; };
+		16E9450D213B460900A12B3B /* particle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = particle.h; path = CS4496P2/particle.h; sourceTree = "<group>"; };
+		16E9450E213B460900A12B3B /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = CS4496P2/Timer.h; sourceTree = "<group>"; };
+		16E9450F213B460900A12B3B /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Timer.cpp; path = CS4496P2/Timer.cpp; sourceTree = "<group>"; };
+		16E9453B213B468600A12B3B /* Dense */ = {isa = PBXFileReference; lastKnownFileType = text; name = Dense; path = CS4496P2/Eigen/Dense; sourceTree = "<group>"; };
+		16E9455F213B476600A12B3B /* Eigen */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Eigen; path = CS4496P2/Eigen; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16E944FB213B45C800A12B3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16E9451C213B461700A12B3B /* OpenGL.framework in Frameworks */,
+				16E9451B213B461300A12B3B /* GLUT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		16E9449B213B3E8500A12B3B = {
 			isa = PBXGroup;
 			children = (
+				16E9455F213B476600A12B3B /* Eigen */,
+				16E9453B213B468600A12B3B /* Dense */,
+				16E94505213B460900A12B3B /* equations.cpp */,
+				16E94507213B460900A12B3B /* equations.h */,
+				16E9450C213B460900A12B3B /* main.cpp */,
+				16E9450A213B460900A12B3B /* Makefile */,
+				16E9450B213B460900A12B3B /* particle.cpp */,
+				16E9450D213B460900A12B3B /* particle.h */,
+				16E94509213B460900A12B3B /* simulator.cpp */,
+				16E94508213B460900A12B3B /* simulator.h */,
+				16E9450F213B460900A12B3B /* Timer.cpp */,
+				16E9450E213B460900A12B3B /* Timer.h */,
+				16E944D1213B42D900A12B3B /* Frameworks */,
+				16E944FE213B45C800A12B3B /* xcode */,
 			);
+			sourceTree = "<group>";
+		};
+		16E944D1213B42D900A12B3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16E944D4213B42DF00A12B3B /* GLUT.framework */,
+				16E944D2213B42D900A12B3B /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -18,11 +99,12 @@
 /* Begin PBXLegacyTarget section */
 		16E944A0213B3E8500A12B3B /* AnimationP1 */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
+			buildArgumentsString = "-j 4 $(ACTION)";
 			buildConfigurationList = 16E944A3213B3E8500A12B3B /* Build configuration list for PBXLegacyTarget "AnimationP1" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/farzonlotfi/Projects/Animation/AnimationP1/CS4496P2;
 			dependencies = (
 			);
 			name = AnimationP1;
@@ -30,6 +112,26 @@
 			productName = AnimationP1;
 		};
 /* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		16E944FD213B45C800A12B3B /* xcode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16E94502213B45C800A12B3B /* Build configuration list for PBXNativeTarget "xcode" */;
+			buildPhases = (
+				16E944FA213B45C800A12B3B /* Sources */,
+				16E944FB213B45C800A12B3B /* Frameworks */,
+				16E944FC213B45C800A12B3B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = xcode;
+			productName = xcode;
+			productReference = 16E944FE213B45C800A12B3B /* xcode */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		16E9449C213B3E8500A12B3B /* Project object */ = {
@@ -39,6 +141,10 @@
 				ORGANIZATIONNAME = "Farzon Lotfi";
 				TargetAttributes = {
 					16E944A0213B3E8500A12B3B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					16E944FD213B45C800A12B3B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -52,13 +158,36 @@
 				en,
 			);
 			mainGroup = 16E9449B213B3E8500A12B3B;
+			productRefGroup = 16E9449B213B3E8500A12B3B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				16E944A0213B3E8500A12B3B /* AnimationP1 */,
+				16E944FD213B45C800A12B3B /* xcode */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16E944FA213B45C800A12B3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16E94560213B476600A12B3B /* Eigen in Sources */,
+				16E94510213B460900A12B3B /* equations.cpp in Sources */,
+				16E94512213B460900A12B3B /* equations.h in Sources */,
+				16E94513213B460900A12B3B /* simulator.h in Sources */,
+				16E94514213B460900A12B3B /* simulator.cpp in Sources */,
+				16E94515213B460900A12B3B /* Makefile in Sources */,
+				16E94516213B460900A12B3B /* particle.cpp in Sources */,
+				16E94517213B460900A12B3B /* main.cpp in Sources */,
+				16E94518213B460900A12B3B /* particle.h in Sources */,
+				16E94519213B460900A12B3B /* Timer.h in Sources */,
+				16E9451A213B460900A12B3B /* Timer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		16E944A1213B3E8500A12B3B /* Debug */ = {
@@ -183,6 +312,28 @@
 			};
 			name = Release;
 		};
+		16E94503213B45C800A12B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		16E94504213B45C800A12B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -200,6 +351,15 @@
 			buildConfigurations = (
 				16E944A4213B3E8500A12B3B /* Debug */,
 				16E944A5213B3E8500A12B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16E94502213B45C800A12B3B /* Build configuration list for PBXNativeTarget "xcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16E94503213B45C800A12B3B /* Debug */,
+				16E94504213B45C800A12B3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
