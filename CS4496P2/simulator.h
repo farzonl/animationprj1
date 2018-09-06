@@ -31,4 +31,27 @@ private:
     std::vector<Particle> mParticles;
 };
 
+class Equations {
+public:
+    static double EARTH_GRAVITY;
+    static void kinematicEquation(Particle &p,
+                              double timeStep,
+                              double gravity);
+
+    static void explicitEulerEquation(Particle &p,
+                                  double timeStep,
+                                  double gravity);
+    
+    static void midpointEquation(Particle &p,
+                                      double timeStep,
+                                      double gravity);
+    
+    static void implicitEulerEquation(Particle &p,
+                                      double timeStep,
+                                      double gravity);
+private:
+    Equations(){}
+       
+};
+
 #endif  // SIMULATOR_H

@@ -1,5 +1,5 @@
-CXX    = clang++
-CFLAGS = -O2 -std=c++11
+CXX    = g++
+CFLAGS = -O2
 INCLUDES = -I ./
 
 TARGET = main.out
@@ -14,15 +14,14 @@ endif
 OBJS = main.o \
 	particle.o \
 	simulator.o \
-    equations.o  \
 	Timer.o
 
 all: $(TARGET)
 					
 $(TARGET): $(OBJS)
-	$(CXX) $(CFLAGS)  -o $@ $(OBJS) $(LIBS_GL)
+	$(CXX)  -o $@ $(OBJS) $(LIBS_GL)
 
 clean:
 	-rm -f $(OBJS)
 .cpp.o:
-	$(CXX) $(CFLAGS) $(INCLUDES) -c $<
+	$(CXX) $(INCLUDES) -c $<
