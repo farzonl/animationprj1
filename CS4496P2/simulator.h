@@ -24,7 +24,7 @@ public:
     double getTimeStep();
     
     void writeToFile();
-    
+    void resetAnalytics();
     void reset();
 private:
     double initialVelocity;

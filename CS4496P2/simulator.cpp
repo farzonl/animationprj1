@@ -42,6 +42,18 @@ void Simulator::setInitialVelocity(double v0) {
     initialVelocity = v0;
 }
 
+void Simulator::resetAnalytics() {
+    count = 0;
+    explicitEulerVelocity.clear();
+    implicitEulerVelocity.clear();
+    midpointVelocity.clear();   
+    analyticalVelocity.clear();
+    analyticalPosition.clear();
+    explicitEulerPosition.clear();
+    implicitEulerPosition.clear();
+    midpointPosition.clear();
+}
+
 void Simulator::reset() {
     mParticles[0].mPosition[0] = -0.2;
     mParticles[0].mPosition[1] = 20.0;
@@ -52,16 +64,7 @@ void Simulator::reset() {
     mParticles[3].mPosition[0] = 0.4;
     mParticles[3].mPosition[1] = 20.0;
 
-    count = 0;
-
-    explicitEulerVelocity.clear();
-    implicitEulerVelocity.clear();
-    midpointVelocity.clear();   
-    analyticalVelocity.clear();
-    analyticalPosition.clear();
-    explicitEulerPosition.clear();
-    implicitEulerPosition.clear();
-    midpointPosition.clear();
+    resetAnalytics();
     
     for (int i = 0; i < 4; i++) {
         mParticles[i].mVelocity.setZero();
@@ -103,7 +106,7 @@ void Simulator::simulate() {
     if(count >= limit) {
         std::cout << "hit: " << count << std::endl;
         writeToFile();
-        reset();
+        resetAnalytics();
     }
     if(count < limit) {
         analyticalVelocity.push_back(mParticles[0].mVelocity[1]);
