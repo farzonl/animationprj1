@@ -6,6 +6,11 @@ matrix:
       script:
        - make -C CS4496P2
     - os: linux
+      before_install:
+       - sudo apt-get install freeglut3-dev
+      addons:
+        apt:
+          update: true
       dist: xenial
       compiler: gcc
       script:
