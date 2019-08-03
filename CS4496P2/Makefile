@@ -1,4 +1,3 @@
-CXX    = clang++
 CFLAGS = -O2 -std=c++11
 INCLUDES = -I ./
 
@@ -7,8 +6,10 @@ ifeq ($(OS),Windows_NT)
 	LIBS_GL = -lfreeglut -lglu32 -lopengl32		#Windows
 	TARGET = main.exe	
 else ifeq ($(shell uname -s),Darwin)	
+	CXX := clang++
 	LIBS_GL = -framework OpenGL -framework GLUT	#Mac
 else	
+	CXX := g++
 	LIBS_GL = -lglut -lGL -lGLU			#Linux(defalut)
 endif
 OBJS = main.o \

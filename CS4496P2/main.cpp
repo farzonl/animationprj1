@@ -169,6 +169,9 @@ void myGlutKeyboard(unsigned char key, int x, int y) {
             frame_number = 0;
             simulating = false;
             break;
+        case 'w':
+            mySimulator.writeToFile();
+            break;
         default:
             break;
     }

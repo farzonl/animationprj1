@@ -23,12 +23,23 @@ public:
     
     double getTimeStep();
     
+    void writeToFile();
+    void resetAnalytics();
     void reset();
 private:
     double initialVelocity;
     double mTimeStep;       // time step
     double mElapsedTime;    // time pased since beginning of simulation
+    int count;
     std::vector<Particle> mParticles;
+    std::vector<double> explicitEulerVelocity;
+    std::vector<double> implicitEulerVelocity;
+    std::vector<double> midpointVelocity;     
+    std::vector<double> analyticalVelocity;    
+    std::vector<double> analyticalPosition;    
+    std::vector<double> explicitEulerPosition;    
+    std::vector<double> implicitEulerPosition;  
+    std::vector<double> midpointPosition;     
 };
 
 #endif  // SIMULATOR_H

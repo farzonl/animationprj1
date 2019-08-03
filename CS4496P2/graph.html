@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<canvas id="positionChart"></canvas>
+<canvas id="velocityChart"></canvas>
+<script>
+    function loadJSON(callback) {   
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', 'my_data.json', true); // Replace 'my_data' with the path to your file
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+            }
+        };
+    xobj.send(null);  
+    }
+
+function init() {
+    loadJSON(function(response) {
+    // Parse JSON string into object
+        var actual_JSON = JSON.parse(response);
+        console.log(actual_JSON);
+
+        var chartColors = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(231,233,237)'
+        };
+
+        let kinArr = actual_JSON['kinematicEquation']['position'];
+        let kinArrV = actual_JSON['kinematicEquation']['velocity'];
+
+        let explictEulerArr = actual_JSON['explicitEulerEquation']['position'];
+        let explictEulerArrV = actual_JSON['explicitEulerEquation']['velocity'];
+
+        let midArr = actual_JSON['midpointEquation']['position'];
+        let midArrV = actual_JSON['midpointEquation']['velocity'];
+
+        let implicitEulerArr = actual_JSON['implicitEulerEquation']['position'];
+        let implicitEulerArrV = actual_JSON['implicitEulerEquation']['velocity'];
+
+        let kinObjP = {label: 'kinematicPosition', data : [], borderColor: chartColors.blue};
+        let kinObjV = {label: 'kinematicVelocity', data : [], borderColor: chartColors.blue};
+
+        let exEulerObjP = {label: 'exEulerPosition', data : [], borderColor: chartColors.red};
+        let exEulerObjV = {label: 'exEulerVelocity', data : [], borderColor: chartColors.red};
+
+        let midObjP = {label: 'midpointPosition', data : [], borderColor: chartColors.green };
+        let midObjV = {label: 'midpointVelocity', data : [], borderColor: chartColors.green };
+
+        let imEulerObjP = {label: 'imEulerPosition', data : [], borderColor: chartColors.yellow };
+        let imEulerObjV = {label: 'imEulerVelocity', data : [], borderColor: chartColors.yellow };
+
+        for(let i = 0 ; i < kinArr.length;i++) {
+            kinObjP.data.push( {
+                x: i, y: kinArr[i]
+            });
+            kinObjV.data.push( {
+                x: i, y: kinArrV[i]
+            });
+
+            exEulerObjP.data.push( {
+                x: i, y: explictEulerArr[i]
+            });
+            exEulerObjV.data.push( {
+                x: i, y: explictEulerArrV[i]
+            });
+
+            imEulerObjP.data.push( {
+                x: i, y: implicitEulerArr[i]
+            });
+            imEulerObjV.data.push( {
+                x: i, y: implicitEulerArrV[i]
+            });
+
+            midObjP.data.push( {
+                x: i, y: midArr[i]
+            });
+            midObjV.data.push( {
+                x: i, y: midArrV[i]
+            });
+
+        }
+
+        var x = new Chart(document.getElementById("positionChart"), {
+            type: 'scatter',
+            data: {
+                datasets: [kinObjP, exEulerObjP, imEulerObjP, midObjP],
+                
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        var x = new Chart(document.getElementById("velocityChart"), {
+            type: 'scatter',
+            data: {
+                datasets: [kinObjV, exEulerObjV, imEulerObjV, midObjV]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    });
+}
+
+init();
+</script>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <body>
+  
+  </body>
+</html>
