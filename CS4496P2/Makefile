@@ -1,4 +1,4 @@
-CFLAGS = -O2 -std=c++11
+CFLAGS = -coverage -O2 -std=c++11
 INCLUDES = -I ./
 
 TARGET = main.out
@@ -24,6 +24,6 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CFLAGS)  -o $@ $(OBJS) $(LIBS_GL)
 
 clean:
-	-rm -f $(OBJS)
+	-rm -f $(OBJS) *.gcov *.gcda *.gcno
 .cpp.o:
 	$(CXX) $(CFLAGS) $(INCLUDES) -c $<

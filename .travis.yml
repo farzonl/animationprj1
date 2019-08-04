@@ -15,3 +15,7 @@ matrix:
       compiler: gcc
       script:
         - make -C CS4496P2
+      after_success:
+       - export CODECOV_TOKEN="b5b9caae-8857-4914-91fd-aa954f9184b1"
+       - gcov CS4496P2/*.cpp
+       - bash <(curl -s https://codecov.io/bash)
