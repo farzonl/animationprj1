@@ -18,8 +18,12 @@ OBJS = main.o \
     equations.o  \
 	Timer.o
 
+all: initDep
 all: $(TARGET)
-					
+
+initDep :
+	bash uzDep.sh
+
 $(TARGET): $(OBJS)
 	$(CXX) $(CFLAGS)  -o $@ $(OBJS) $(LIBS_GL)
 
